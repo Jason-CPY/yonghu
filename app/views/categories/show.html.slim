@@ -1,0 +1,8 @@
+- @products.each_slice(2).each do |products|
+  .row 
+    - products.each do |product|
+      .col-xs-6
+        = render partial: 'products/product', locals: {product: product}
+  br
+
+= will_paginate @products, renderer: BootstrapPagination::Rails

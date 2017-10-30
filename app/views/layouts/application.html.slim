@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | 用户
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    javascript:
+      window.user_id = "#{current_user ? current_user.id : nil}"
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render "layouts/menu"
+
+    .container#container
+      = bootstrap_flash
+      = yield
