@@ -4,6 +4,8 @@ class Image
 
     key = filename
 
+    puts filePath
+
     put_policy = Qiniu::Auth::PutPolicy.new(bucket, key, 3600)
 
     uptoken = Qiniu::Auth.generate_uptoken(put_policy)
