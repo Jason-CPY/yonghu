@@ -1,6 +1,12 @@
+<div>
 - @categories.each_slice(2).each do |categories|
-  .row 
     - categories.each do |category|
-      .col-xs-6
+        <dl>
+        <dt>
         = render partial: 'categories/category_block', locals: {category: category}
-  br
+        </dt>
+        <dd>
+        = category.name
+        </dd>
+        </dl>
+<div>
