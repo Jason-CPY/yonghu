@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-body
+    table.table.table-striped
+      thead
+        tr
+          th 登录邮箱
+          th 登录次数
+          th
+
+      tbody
+        - @users.each do |user|
+          -if user.email == current_user.email
+            tr
+              td = user.email
+              td = user.sign_in_count
+              td
+                 = link_to '修改城市', edit_user_path(user)
+  .panel-footer
+    = link_to 'back', root_path, class: 'btn btn-info btn-sm'

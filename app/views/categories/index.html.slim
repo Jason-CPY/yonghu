@@ -1,12 +1,19 @@
-<div>
+.row 
+  ul.nav.navbar-nav.ieCss.pull-right role="presentation"
+    .dropdown
+      span style="font-size:14px; color:#777" = current_city['name']
+      button.btn.dropdown-toggler type='button' data-toggle='dropdown' style='background:none' &#9660
+      ul.dropdown-menu role='menu' aria-labelledby="dropdownMenu1"
+        - City.all.each do |city|
+          li role="presentation"
+            = link_to city.name, change_current_city_users_path(city_id: city.id), method: :put
+
+
 - @categories.each_slice(2).each do |categories|
+  .row 
     - categories.each do |category|
-        <dl>
-        <dt>
+      .col-xs-6
         = render partial: 'categories/category_block', locals: {category: category}
-        </dt>
-        <dd>
+        br
         = category.name
-        </dd>
-        </dl>
-<div>
+  br

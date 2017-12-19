@@ -1,0 +1,8 @@
+= simple_form_for(@voucher) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :coupon, collection: @coupons
+
+  .form-actions
+	= f.button :submit

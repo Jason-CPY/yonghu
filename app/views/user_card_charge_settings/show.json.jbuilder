@@ -1,0 +1,1 @@
+json.partial! "user_card_charge_settings/user_card_charge_setting", user_card_charge_setting: @user_card_charge_setting

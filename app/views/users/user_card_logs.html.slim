@@ -1,0 +1,20 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        | 会员卡流水
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th 金额
+              th 类型
+              th 时间
+
+          tbody
+            - @user_card_logs.each do |user_card_log|
+              tr
+                td = user_card_log.fake_money
+                td = show_user_card_log_kind user_card_log.kind
+                td = date_time user_card_log.created_at
+        = will_paginate @user_card_logs, renderer: BootstrapPagination::Rails

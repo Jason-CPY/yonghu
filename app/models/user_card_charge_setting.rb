@@ -1,0 +1,2 @@
+class UserCardChargeSetting < ApplicationRecord
+end

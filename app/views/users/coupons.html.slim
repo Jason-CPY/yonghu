@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        | 优惠券
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th width='15%' 名称
+              th width='10%' 有效期
+              th width='30%' 优惠内容
+          tbody
+            - @coupons.each do |coupon|
+              tr
+                td = coupon.coupon_list.name
+                td = "#{coupon.valid_from} - #{coupon.valid_to}"
+                td = show_promotion_content(coupon.coupon_list.order_promotion)
+        = will_paginate @coupons, renderer: BootstrapPagination::Rails  

@@ -1,0 +1,35 @@
+= simple_form_for(@user_address) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.simple_fields_for :address do |a|
+      = a.input :address, as: :select
+      = a.input :comment
+      = a.input :lat
+      = a.input :lng
+
+  .form-actions
+    = f.button :submit
+
+javascript:
+  $(function(){
+    $("#user_address_address_attributes_address").select2({
+      placeholder: "输入一个地址",
+      theme: 'bootstrap',
+      ajax: {
+        url: '/addresses/suggestion.json',
+        dataType: 'json',
+        delay: 250,
+        cache: false
+      },
+      minimumInputLength: 1
+    })
+    $("#user_address_address_attributes_address").on("change", function (e) {
+      var data = $("#user_address_address_attributes_address").select2('data')[0];
+      if(data){
+        $("#user_address_address_attributes_lat").val(data['lat'])
+        $("#user_address_address_attributes_lng").val(data['lng'])
+      }
+    });
+  })

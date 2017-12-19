@@ -1,0 +1,57 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading#base_info
+        | 基本信息
+      .panel-body
+        table.table.table-striped
+          tr
+            td width='15%' Category
+            td width='35%' = @order.category.name
+          tr
+            td width='15%' 物流状态
+            td width='35%' = show_order_courier_status @order.courier_status
+
+    .panel.panel-default
+      .panel-heading#waybills
+        | 物流信息
+      .panel-body
+        table.table.table-stripted
+          thead
+            tr
+              th 状态
+              th 送出方
+              th 送出地址
+              th 接收方
+              th 目标地址
+              th 创建时间
+              th 最后更新时间
+          tbody
+            - @order.waybills.each do |waybill|
+              tr
+                td = show_waybill_status(waybill.status)
+                td = waybill.sender
+                td = waybill.from_address.address
+                td = waybill.receiver
+                td = waybill.to_address.address
+                td = date_time waybill.created_at
+                td = date_time waybill.updated_at
+
+    .panel.panel-default
+      .panel-heading#operations
+        | 分拣信息
+      .panel-body
+        table.table.table-striped
+          tr
+            th 产品
+            th 数量
+            th 单价
+            th 总价
+          - @order.items.each do |item|
+            tr
+              td = item.product
+              td = item.amount
+              td = item.price
+              td = item.amount * item.price
+
+= link_to '支付', pay_voucher_path(@order.voucher), class: 'btn btn-info btn-sm' if @order.can_pay?

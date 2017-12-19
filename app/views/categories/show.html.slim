@@ -6,3 +6,5 @@
   br
 
 = will_paginate @products, renderer: BootstrapPagination::Rails
+
+= link_to '下单', new_order_path(category: @category), class: 'btn btn-info btn-sm'

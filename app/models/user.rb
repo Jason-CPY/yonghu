@@ -35,4 +35,23 @@ class User < ApplicationRecord
      end
    end
 
+   has_many :user_addresses
+   has_and_belongs_to_many :cities
+   has_many :orders
+
+   has_many :deliver_waybills, as: :sender, class_name: Waybill
+   has_many :pickup_waybills, as: :receiver, class_name: Waybill
+
+   has_one :user_card
+
+   has_many :coupons
+
+   def to_s
+     "User #{self.id}"
+   end
+
+   after_create do 
+    self.create_user_card
+   end
+
 end

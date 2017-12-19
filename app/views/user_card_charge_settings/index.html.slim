@@ -1,0 +1,11 @@
+.row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          | 充值优惠
+        .panel-body
+          table.table.table-striped
+            - @user_card_charge_settings.each do |user_card_charge_setting|
+              tr
+                td = "冲 #{user_card_charge_setting.min} 送 #{user_card_charge_setting.money_give}"
+                td = link_to '充值', pay_user_card_charge_setting_path(user_card_charge_setting), method: :post

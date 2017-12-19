@@ -1,0 +1,28 @@
+- unless current_user
+  = link_to '登录', new_user_session_path
+- else
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          | 我的钱包
+        .panel-body
+          table.table
+            tr
+              th 
+                = link_to current_user.user_card.fake_money, user_card_logs_users_path
+              th 
+                = link_to current_user.coupons.where('used_at is null').count, coupons_users_path
+            tr
+              td
+                | 余额
+              td
+                | 优惠券
+        .panel-footer
+          = link_to '充值', user_card_charge_settings_path, class: 'btn btn-info btn-sm'
+
+      .panel.panel-default
+        .panel-body
+          table.table
+            tr
+              td = link_to '地址列表', user_addresses_path

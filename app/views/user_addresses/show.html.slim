@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong User:
+  = @user_address.user
+p
+  strong Name:
+  = @user_address.name
+
+=> link_to 'Edit', edit_user_address_path(@user_address)
+'|
+=< link_to 'Back', user_addresses_path

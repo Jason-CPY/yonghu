@@ -2,7 +2,15 @@
 	ul.nav.nav-tabs.nav-justified
 	  li role="presentation" class="#{is_active?(['categories'], params[:controller])}"
 	    = link_to '首页', categories_path
-	  / li role="presentation" class="#{is_active?(['orders'], params[:controller])}"
+	  li role="presentation" class="#{is_active?(['orders'], params[:controller])}"
 	    = link_to '订单', orders_path
-	  / li role="presentation" class="#{is_active?(['home', 'addresses'], params[:controller])}"
+	  li role="presentation" class="#{is_active?(['home', 'addresses'], params[:controller])}"
 	    = link_to '我的', user_home_path
+    ul.nav.navbar-nav.ieCss.pull-right role="presentation"
+      .dropdown
+        span style="font-size:14px; color:#777" = current_user.email
+        button.btn.dropdown-toggler type='button' data-toggle='dropdown' style='background:none' &#9660
+        ul.dropdown-menu role='menu' aria-labelledby="dropdownMenu1"
+          li role="presentation"
+            = link_to "个人信息", users_path
+            = link_to "退出登陆", destroy_user_session_path, method: :delete

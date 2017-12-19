@@ -1,10 +1,7 @@
-<div>
-    <dl>
-     <dt>
-     =image_tag qiniu_url(product.logo), size: '150x150'
-     </dt>
-     <dd>
-     = product.name
-     </dd>
-     </dl>
-</div>
+table
+  tr
+    td = image_tag qiniu_url(product.logo), size: '150x150'
+  tr
+    td = product.name
+  tr
+	td = product.price.send("price#{@price_rule.grade}")

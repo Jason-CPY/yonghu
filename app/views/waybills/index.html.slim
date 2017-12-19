@@ -1,0 +1,19 @@
+h1 Listing waybills
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @waybills.each do |waybill|
+      tr
+        td = link_to 'Show', waybill
+        td = link_to 'Edit', edit_waybill_path(waybill)
+        td = link_to 'Destroy', waybill, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Waybill', new_waybill_path
