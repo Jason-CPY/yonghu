@@ -36,7 +36,7 @@ class User < ApplicationRecord
    end
 
    has_many :user_addresses
-   has_and_belongs_to_many :cities
+   belongs_to :city
    has_many :orders
 
    has_many :deliver_waybills, as: :sender, class_name: Waybill

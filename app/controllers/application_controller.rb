@@ -9,14 +9,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    added_attrs = [:username, :phoneno, :email, :password, :password_confirmation, :remember_me]
+    added_attrs = [:username, :phoneno, :email, :password, :password_confirmation, :city_id, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
   def current_city
     unless session[:current_city_id]
-      session[:current_city_id] = current_user.cities.first.id if current_user.cities.first
+      session[:current_city_id] = City.first.id
     end
     if session[:current_city_id]
       @current_city ||= City.find(session[:current_city_id])
