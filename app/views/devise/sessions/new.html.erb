@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<!-- <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -26,4 +26,37 @@
 <div class="field">
   <%= render "devise/shared/links" %>
     
-  </div>
+  </div>  -->
+<body class="login">
+<div class="container" id="container" >
+   <h1>Wash-client</h1>
+   <div class="login-form">
+     <!-- <img src="logo.jpg" class="avtar" /> -->
+     <form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="gO32WAl95ixhMwUXuW4GXi5ycXGkWNzVh2wNifiu8UeYJJAV+eHqdMfnRAJOjy5xCHbikr7U+1+70SATXghkRw==" type="hidden">
+        <div class="field" >
+         <!--  <label class="string optional" for="user_login">Login</label><br> -->
+          <input autofocus="autofocus" name="user[login]" id="user_login" type="text" placeholder="userName" >
+        </div>
+
+        <div class="field">
+          <!-- <label class="password optional" for="user_password">Password</label><br> -->
+          <input autocomplete="off" name="user[password]" id="user_password" type="password" placeholder="password">
+        </div>
+
+        <div class="field">
+          <input name="user[remember_me]" value="0" type="hidden">
+          <input value="1" name="user[remember_me]" id="user_remember_me" type="checkbox" style="float: left;margin-left: 5%">
+          <label class="string optional" for="user_remember_me" style="color: #C0C0C0;font-size: 14px;float: left;margin-left: 5px; ">Remember me</label>
+        </div>
+        <a href="/users/password/new">Forgot your password?</a><br>
+      
+      <div class="field">
+        <div class="actions">
+          <input name="commit" value="Log in" data-disable-with="Log in" type="submit" >
+        </div>
+      </div>
+      <label class="info">Don't have an account?</label><a href="/users/sign_up">Sign up</a>
+      </form>
+    </div>
+</div> 
+</body>

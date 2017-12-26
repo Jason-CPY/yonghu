@@ -1,4 +1,4 @@
-<h2>Forgot your password?</h2>
+<!-- <h2>Forgot your password?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -12,4 +12,27 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->
+<body class="login">
+	<div class="container" id="container">
+	 
+   		<h1>Forgot password?</h1>
+		<div class="login-form">
+		<form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="zEhJMYOJxEldivOhboaOBpLekBL8TaUmOGHxiD5kB8F2G0tzkAqHFiQA0YoQBjpItQGIFLJvXamOfA0gnr2n8w==">
+		  <div class="form-inputs">
+		    <div class="form-group tel required user_phoneno">
+		   		 <label class="control-label tel required" for="user_phoneno" style="color: #C0C0C0;font-size: 15px; margin: 2em auto 1em auto;float: left;margin-left: 5%;"><abbr title="required">*</abbr> Phoneno</label>
+		   		 <input class="form-control string tel required" autofocus="autofocus" required="required" aria-required="true" type="tel" name="user[phoneno]" id="user_phoneno" >
+		    </div>
+		  </div>
+
+		  <div class="form-actions">
+		    <input type="submit" name="commit" value="Reset password " class="btn btn-default" data-disable-with="Reset password" style="margin:5% auto;">
+		  </div>
+		</form>
+		<a href="/users/sign_in" style="font-size: 14px; float: left; margin-left: 20%;margin-right: 5%; display: inline;">Log in</a>
+
+		<a href="/users/sign_up">Sign up</a><br>
+	    </div>
+	</div>
+</body>

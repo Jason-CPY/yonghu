@@ -18,3 +18,28 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url(background.jpg) no-repeat 0px 0px;
+	font-family: 'Open Sans', sans-serif;
+	background-attachment: fixed;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+}
+
+.container{
+	margin-bottom:40px;
+	margin-top: 5%;
+}
+.container a{
+	min-width: 100px;
+	font-size: 18px;
+}
+.container table td a{
+	vertical-align: middle;
+	font-size: 15px;
+}

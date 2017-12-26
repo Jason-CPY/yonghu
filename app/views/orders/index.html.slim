@@ -1,4 +1,5 @@
-.panel.panel-default
+.order
+.panel.panel-default 
   .panel-heading
     | 订单
   .panel-body
@@ -25,3 +26,4 @@
             td = link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete
 
 = will_paginate @orders, renderer: BootstrapPagination::Rails
+

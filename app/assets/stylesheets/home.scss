@@ -1,0 +1,92 @@
+
+.homeBg{
+    background: #C0C0C0;
+}
+.homeinfo{
+	text-align: center;
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+.gallery-container {
+    text-align: center;
+    margin: auto;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #58595a;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #85878c;
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: none;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+.row_1{
+	display:inline-block;
+}
+
+.tz-gallery .thumbnail:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.tz-gallery .lightbox {
+    border-radius: 4px 4px 0 0;
+    border: none
+}
+
+.tz-gallery .caption{
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #AAAAAA;
+}
+
+.tz-gallery .caption h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.tz-gallery .caption p {
+    font-size: 12px;
+    color: #7b7d7d;
+    margin: 0;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+
+.tz-gallery .thumbnail img{
+	width: 500px;
+	height: 200px;
+	border: none;
+	border-bottom: 2px,black;
+}
+.tz-gallery .thumbnail hr{
+	size: 5px;
+	color: #AAAAAA;
+}
+
+.row .col-xs-6{
+	width: 100%;
+	height: auto;
+	padding-top: 0;
+}
+

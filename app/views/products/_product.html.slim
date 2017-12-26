@@ -1,7 +1,16 @@
-table
-  tr
-    td = image_tag qiniu_url(product.logo), size: '150x150'
-  tr
-    td = product.name
-  tr
-	td = product.price.send("price#{@price_rule.grade}")
+.panel.panel-default 
+  .panel-heading style="width=100%;"
+    | 产品
+  .panel-body 
+    table.table.table-striped style="width=100%;"
+      thead
+        tr
+          th Type
+          th Picture
+          th Price
+
+      tbody
+          tr
+            td = product.name
+            td = image_tag qiniu_url(product.logo), size: '150x150'
+            td = product.price.send("price#{@price_rule.grade}")

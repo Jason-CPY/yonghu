@@ -10,7 +10,7 @@ default: &default
   encoding: utf8
   database: ruby_course
   username: root
-  password: yuan8023
+  password: xiaoxue
   pool: 5
 
 development:

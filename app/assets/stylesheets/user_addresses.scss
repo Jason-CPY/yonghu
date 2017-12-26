@@ -1,3 +1,43 @@
 // Place all the styles related to the user_addresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container .address a {
+	background-color: rgb(91,192,222) ;
+	border-radius: 4px;
+	padding: 5px 10px;
+	color:#fff;
+	float: left;
+}
+.address label{
+	float: left;
+	display: inline;
+} 
+
+.formIn .form-inputs{
+	margin-left: 35%;
+	width: 30%;
+}
+.formIn .form-actions{
+	margin-left: 35%;
+	width: 30%;
+	text-align: center;
+}
+.formIn .form-actions input[type="submit"]{
+	background: rgb(91,192,222);
+	color:#fff;
+	width: 80%;
+	border-radius: 4px;
+}
+.formIn .form-inputs input[type="text"]{
+	width: 100%;
+}
+.formIn .form-inputs input[type="number"]{
+	width: 100%;
+}
+.formIn .form-inputs select{
+	width: 100%;
+}
+
+
+

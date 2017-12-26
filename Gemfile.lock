@@ -79,7 +79,6 @@ GEM
       deep_merge (~> 1.1.1)
       dry-validation (>= 0.10.4)
     crass (1.0.3)
-    database_cleaner (1.0.1)
     deep_merge (1.1.1)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -281,7 +280,6 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   config
-  database_cleaner (< 1.1.0)
   devise
   jbuilder (~> 2.5)
   jquery-rails
@@ -308,4 +306,4 @@ DEPENDENCIES
   workflow
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3
